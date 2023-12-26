@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {  EducativeForm, EducativeFormAcion } from './EducativeForm';
+import {Route,createBrowserRouter,createRoutesFromElements, RouterProvider} from "react-router-dom";
+import Layouts from './layouts/Layouts';
 
 function App() {
+  const educative_router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<Layouts /> } >
+          <Route path="/educative_forms" element= {<EducativeForm/>} action={EducativeFormAcion}/>
+        </Route> 
+    )
+  )
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={educative_router} />
     </div>
+    </>
+    
   );
 }
-
 export default App;
