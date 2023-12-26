@@ -25,7 +25,7 @@ function EducativeForm() {
     const educative_employee_name = educative_data.get("educative_employee_name");
     const educative_errors = {};
     if (!isNaN(educative_employee_name) || educative_employee_name === "" ){
-      educative_errors.educative_employee_name = "Name must be a string, reneter your name!"
+      educative_errors.educative_employee_name = "Name must be a string, renter your name!"
     }
     if (isNaN(educative_employee_age) || educative_employee_age< 18 || educative_employee_age > 70 || educative_employee_age === ""){
       educative_errors.educative_employee_age = "Invalid age, must be a number between 18 and 70"
